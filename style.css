@@ -10,4 +10,111 @@
 
 * {
   box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
+
+/* reset 시작 */
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* reset 끝 */
+
+body {
+  background-color: var(--color-black);
+  width: 100vw;
+  height: 100vh;
+}
+
+header,
+nav,
+main {
+  width: 600px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* header 시작 */
+
+header img {
+  margin: 10% 50% 0 50%;
+  height: 80px;
+  width: 80px;
+}
+
+/* header 끝 */
+
+/* nav-filter 시작 */
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul a:active {
+  color: var(--color-black);
+}
+
+.filter img {
+  height: 50px;
+  width: 50px;
+}
+
+.filter {
+  text-align: center;
+  padding: 10px;
+  margin: 0 10px;
+}
+
+.filter:hover {
+  transform: scale(1.2);
+}
+
+.filter-blue {
+  background: var(--color-blue);
+}
+.filter-yellow {
+  background: var(--color-yellow);
+}
+.filter-pink {
+  background: var(--color-pink);
+}
+
+/* nav-filter 끝 */
+
+/* main 시작 */
+
+main {
+  height: 70%;
+  overflow: auto;
+  align-items: flex-start;
+}
+
+main ul {
+  width: 85%;
+}
+
+main ul .product-list {
+  background-color: var(--color-light-grey);
+  margin: 12px 0px;
+  border-radius: 5px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+}
+
+main ul .product-list img {
+  height: 50px;
+  width: 50px;
+  margin: 0 20px;
+}
+
+/* main 끝 */
