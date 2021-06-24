@@ -1,0 +1,110 @@
+:root {
+	/* color */
+	--color-black: #3f454d;
+	--color-white: #ffffff;
+	--color-blue: #3b88c3;
+	--color-yellow: #fbbe28;
+	--color-pink: #fd7f84;
+	--color-light-grey: #dfdfdf;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* reset.css */
+html,
+body,
+div,
+span,
+ul {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: black;
+	border: 1px solid black;
+	display: block;
+}
+
+/* 본문 css  */
+body {
+	background-color: var(--color-black);
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* 로고 부분 */
+.logo {
+	border: 1px solid red;
+	display: flex;
+	justify-content: center;
+}
+
+/* 네비게이션 바 부분 */
+.navigation {
+	border: 1px solid yellow;
+	display: flex;
+	justify-content: center;
+}
+.navigation ul li {
+	display: inline-block;
+	border: 1px solid blue;
+	font-size: 20px;
+	padding: 10px 5px;
+	cursor: pointer;
+}
+.navigation ul li + li {
+	margin-left: 15px;
+}
+.navigation ul li img {
+	width: 40px;
+	vertical-align: middle;
+}
+.navigation ul .blue {
+	background-color: var(--color-blue);
+}
+.navigation ul .yellow {
+	background-color: var(--color-yellow);
+}
+.navigation ul .pink {
+	background-color: var(--color-pink);
+}
+
+/* 리스트 부분 */
+.contents {
+	border: 1px solid green;
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+.contents ul {
+	width: 435px;
+	height: 500px;
+	overflow: auto;
+}
+.contents ul li {
+	background-color: var(--color-white);
+	border-radius: 15px;
+	padding: 10px;
+}
+.contents ul li + li {
+	margin-top: 5px;
+}
+.contents ul li img {
+	width: 40px;
+	vertical-align: middle;
+}
+.contents ul li span {
+	margin-left: 20px;
+}
