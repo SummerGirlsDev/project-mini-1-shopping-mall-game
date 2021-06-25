@@ -10,27 +10,42 @@
 	<body>
 		<div class="main">
 			<div class="logo">
-				<img src="./img/logo.png" alt="Shopping mall Logo" />
+				<img class="animation" src="./img/logo.png" alt="Shopping mall Logo" />
 			</div>
 			<nav class="navigation">
 				<ul>
-					<li>
-						<img src="./img/blue_t.png" class="t-shirts" alt="t-shirts" />
+					<li class="animation">
+						<img
+							src="./img/blue_t.png"
+							alt="tshirt"
+							data-key="type"
+							data-value="tshirt"
+						/>
 					</li>
-					<li>
-						<img src="./img/blue_p.png" class="pants" alt="pants" />
+					<li class="animation">
+						<img
+							src="./img/blue_p.png"
+							alt="pants"
+							data-key="type"
+							data-value="pants"
+						/>
 					</li>
-					<li>
-						<img src="./img/blue_s.png" class="skirts" alt="skirts" />
+					<li class="animation">
+						<img
+							src="./img/blue_s.png"
+							alt="skirt"
+							data-key="type"
+							data-value="skirt"
+						/>
 					</li>
-					<li class="blue">
-						<span>Blue</span>
+					<li class="blue animation" data-key="color" data-value="blue">
+						Blue
 					</li>
-					<li class="yellow">
-						<span>Yellow</span>
+					<li class="yellow animation" data-key="color" data-value="yellow">
+						Yellow
 					</li>
-					<li class="pink">
-						<span>Pink</span>
+					<li class="pink animation" data-key="color" data-value="pink">
+						Pink
 					</li>
 				</ul>
 			</nav>

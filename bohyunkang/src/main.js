@@ -5,9 +5,8 @@ function loadItems() {
 		.then((json) => json.items);
 }
 loadItems().then((items) => {
-	console.log(items);
 	displayItems(items);
-	// handleToggle(items);
+	handleToggle(items);
 });
 
 // 받아온 item들을 렌더하기
@@ -16,7 +15,7 @@ function displayItems(items) {
 	container.innerHTML = items.map((item) => createHTMLString(item)).join("");
 	// join을 꼭 붙여줘야 함
 }
-
+// item들을 html로 넣어주기
 function createHTMLString(item) {
 	return `
   <li class="item">
@@ -27,13 +26,26 @@ function createHTMLString(item) {
 }
 
 // 버튼 클릭 시 필터링해주는 메소드
-// function handleToggle(items) {
-//   const sortedItem = items.filter((item) => {
-//     return item.
-//   })
-// }
+function handleToggle(items) {
+	const logo = document.querySelector(".logo");
+	const nav = document.querySelector(".navigation > ul");
 
-const nav = document.querySelector(".navigation > ul");
-nav.addEventListener("click", function handleChange(e) {
-	console.log(e.target);
-});
+	// 로고 클릭 시 전체 리스트 렌더링 해주기
+	logo.addEventListener("click", function () {
+		displayItems(items);
+	});
+
+	// 네비게이션 버튼 클릭시 버튼에 맞는 리스트 렌더링 해주기
+	nav.addEventListener("click", function () {
+		handleNavToggle(event, items);
+	});
+}
+
+// 네비게이션 버튼 클릭 메소드
+function handleNavToggle(event, items) {
+	const btnKey = event.target.dataset.key;
+	const btnValue = event.target.dataset.value;
+
+	const filtered = items.filter((item) => item[btnKey] === btnValue);
+	displayItems(filtered);
+}

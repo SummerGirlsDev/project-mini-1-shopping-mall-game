@@ -31,7 +31,6 @@ ul {
 a {
 	text-decoration: none;
 	color: black;
-	border: 1px solid black;
 	display: block;
 }
 
@@ -46,20 +45,17 @@ body {
 
 /* 로고 부분 */
 .logo {
-	border: 1px solid red;
 	display: flex;
 	justify-content: center;
 }
 
 /* 네비게이션 바 부분 */
 .navigation {
-	border: 1px solid yellow;
 	display: flex;
 	justify-content: center;
 }
 .navigation ul li {
 	display: inline-block;
-	border: 1px solid blue;
 	font-size: 20px;
 	padding: 10px 5px;
 	cursor: pointer;
@@ -81,9 +77,13 @@ body {
 	background-color: var(--color-pink);
 }
 
+/* 버튼 호버시 애니메이션 */
+.animation:hover {
+	transform: scale(1.1);
+}
+
 /* 리스트 부분 */
 .contents {
-	border: 1px solid green;
 	display: flex;
 	justify-content: center;
 	margin-top: 20px;
