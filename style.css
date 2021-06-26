@@ -28,7 +28,7 @@ a {
 
 body {
   background-color: var(--color-black);
-  padding: 0 10px 100px;
+  padding: 0 10px 50px;
 }
 
 .a11y-hidden {

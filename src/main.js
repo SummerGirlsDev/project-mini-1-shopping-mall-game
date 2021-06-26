@@ -1,8 +1,26 @@
 "use strict";
 
 const main = document.querySelector("main");
-const btn = document.getElementsByClassName("btn");
+const btns = document.getElementsByClassName("btn");
 const itemList = document.getElementById("item-list");
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetchData().then((items) => {
+    renderData(items);
+  });
+});
+
+for (const btn of btns) {
+  btn.addEventListener("click", (event) => {
+    fetchData()
+      .then((items) => {
+        return filterData(event, items);
+      })
+      .then((items) => {
+        renderData(items);
+      });
+  });
+}
 
 const fetchData = () => {
   return fetch("data/item.json")
@@ -10,48 +28,23 @@ const fetchData = () => {
     .then((json) => json.items);
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  fetchData()
-    .then((items) => {
-      for (let i = 0; i < btn.length; i++) {
-        btn[i].addEventListener("click", filterData);
-        return items;
-      }
-    })
-    .then((items) => renderData(items));
-});
-
-const filterData = (event) => {
-  let dataValue = "";
+const filterData = (event, items) => {
+  let dataset = "";
   event.target.tagName === "IMG"
-    ? (dataValue = event.target.parentNode.dataset.value)
-    : (dataValue = event.target.dataset.value);
-  switch (dataValue) {
-    case "tshirt":
-      data = data.filter((val) => val.type === "tshirt");
-      console.log(dataValue);
+    ? (dataset = event.target.parentNode.dataset)
+    : (dataset = event.target.dataset);
+  let dataKey = dataset.key;
+  let dataValue = dataset.value;
+
+  switch (dataKey) {
+    case "type":
+      items = items.filter((e) => e.type === dataValue);
       break;
-    case "pants":
-      data = data.filter((val) => val.type === "pants");
-      console.log(dataValue);
-      break;
-    case "skirt":
-      data = data.filter((val) => val.type === "skirt");
-      console.log(dataValue);
-      break;
-    case "blue":
-      data = data.filter((val) => val.color === "blue");
-      console.log(dataValue);
-      break;
-    case "yellow":
-      data = data.filter((val) => val.color === "yellow");
-      console.log(dataValue);
-      break;
-    case "pink":
-      data = data.filter((val) => val.color === "pink");
-      console.log(dataValue);
+    case "color":
+      items = items.filter((e) => e.color === dataValue);
       break;
   }
+  return items;
 };
 
 const renderData = (items) => {
