@@ -26,7 +26,7 @@ function displayAll() {
   document.getElementById('items').innerHTML=litext;  
 }
 
-// 아이템 목록 출력 메소드 호출
+// 아이템 목록 출력 메소드 호출ㅇㅇ
 displayAll();
 
 // ================================= 클릭이벤트 ===============================================
