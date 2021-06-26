@@ -1,29 +1,58 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Shopping</title>
     <link rel="stylesheet" href="style.css" />
     <script src="src/main.js" defer></script>
-    <title>Online Shopping</title>
-</head>
-<body>
-    <!-- 로고 -->
-    <img class="logo" src="img/logo.png" alt="logo">
-    <!-- 버튼 -->
-    <div class="buttons">
-        <button class="btn">
-            <img src="img/blue_t.png" alt="tshirt" class="imgBtn" data-key="type" data-value="tshirt"></button>
-        <button class="btn">
-            <img src="img/blue_p.png" alt="pants" class="imgBtn" data-key="type" data-value="pants"></button>
-        <button class="btn">
-            <img src="img/blue_s.png" alt="skirt" class="imgBtn" data-key="type" data-value="skirt"></button>
-        <button class="btn colorBtn blue" data-key="color" data-value="blue">Blue</button>
-        <button class="btn colorBtn yellow" data-key="color" data-value="yellow">Yellow</button>
-        <button class="btn colorBtn pink" data-key="color" data-value="pink">Pink</button>
-    </div>
-    <!-- 아이템 -->
-    <ul class="items">
-    </ul>
-</body>
+  </head>
+  <body>
+    <!-- Logo -->
+    <img src="img/logo.png" alt="Logo" class="logo" onclick="btnlogo();"/>
+
+    <!-- Buttons -->
+    <section class="buttons">
+      <!-- 클릭이벤트로 버튼을 눌렀을때 value값이 넘어간다. -->
+      <button class="btn" id="btn_t" value="tshirt" onclick="typevalue(this.id);">
+        <img
+          src="img/blue_t.png"
+          alt="tshirt"
+          class="imgBtn"
+          data-key="type"
+          data-value="tshirt"
+        />
+      </button>
+      <button class="btn" id="btn_p" value="pants" onclick="typevalue(this.id);">
+        <img
+        src="img/blue_p.png"
+        alt="pants"
+          class="imgBtn"
+          data-key="type"
+          data-value="pants"
+        />
+      </button>
+      <button class="btn" id="btn_s" value="skirt" onclick="typevalue(this.id);">
+        <img
+          src="img/blue_s.png"
+          alt="skirt"
+          class="imgBtn"
+          data-key="type"
+          data-value="skirt"
+        />
+      </button>
+      <button class="btn colorBtn blue" data-key="color" value="blue" id="btn_blue" onclick="typevalue(this.id);">
+        Blue
+      </button>
+      <button class="btn colorBtn yellow" data-key="color" value="yellow" id="btn_yellow" onclick="typevalue(this.id);">
+        Yellow
+      </button>
+      <button class="btn colorBtn pink" data-key="color" value="pink" id="btn_pink" onclick="typevalue(this.id);">
+        Pink
+      </button>
+    </section>
+
+    <!-- Items -->
+    <ul class="items" id="items"></ul>
+  </body>
 </html>
