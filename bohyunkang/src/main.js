@@ -4,10 +4,12 @@ function loadItems() {
 		.then((res) => res.json())
 		.then((json) => json.items);
 }
-loadItems().then((items) => {
-	displayItems(items);
-	handleToggle(items);
-});
+loadItems()
+	.then((items) => {
+		displayItems(items);
+		handleToggle(items);
+	})
+	.catch(console.error("데이터를 읽어오지 못하였습니다!"));
 
 // 받아온 item들을 렌더하기
 function displayItems(items) {
