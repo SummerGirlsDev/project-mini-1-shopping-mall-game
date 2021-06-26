@@ -16,7 +16,6 @@
 html,
 body,
 div,
-span,
 ul {
 	margin: 0;
 	padding: 0;
@@ -27,11 +26,6 @@ ul {
 }
 ul {
 	list-style: none;
-}
-a {
-	text-decoration: none;
-	color: black;
-	display: block;
 }
 
 /* 본문 css  */
@@ -59,6 +53,7 @@ body {
 	font-size: 20px;
 	padding: 10px 5px;
 	cursor: pointer;
+	border-radius: 4px;
 }
 .navigation ul li + li {
 	margin-left: 15px;
@@ -88,23 +83,23 @@ body {
 	justify-content: center;
 	margin-top: 20px;
 }
-.contents ul {
+.contents .items {
 	width: 435px;
 	height: 500px;
 	overflow: auto;
 }
-.contents ul li {
+.contents .items li {
 	background-color: var(--color-white);
 	border-radius: 15px;
 	padding: 10px;
 }
-.contents ul li + li {
+.contents .items li + li {
 	margin-top: 5px;
 }
-.contents ul li img {
+.contents .items li img {
 	width: 40px;
 	vertical-align: middle;
 }
-.contents ul li span {
+.contents .items li span {
 	margin-left: 20px;
 }
