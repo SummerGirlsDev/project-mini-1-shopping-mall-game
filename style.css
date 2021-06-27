@@ -6,6 +6,9 @@
   --color-yellow: #fbbe28;
   --color-pink: #fd7f84;
   --color-light-grey: #dfdfdf;
+
+  /* annimation */
+  --animation-duration: 300ms;
 }
 
 * {
@@ -43,27 +46,25 @@ main {
 
 /* header 시작 */
 
-header img {
+.logo {
   margin: 10% 50% 0 50%;
   height: 80px;
   width: 80px;
+  cursor: pointer;
+  transition: transform var(--animation-duration) ease;
 }
 
 /* header 끝 */
 
 /* nav-filter 시작 */
 
-nav ul {
+.buttons {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-nav ul a:active {
-  color: var(--color-black);
-}
-
-.filter img {
+.imgBtn {
   height: 50px;
   width: 50px;
 }
@@ -72,6 +73,11 @@ nav ul a:active {
   text-align: center;
   padding: 10px;
   margin: 0 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform var(--animation-duration) ease;
 }
 
 .filter:hover {

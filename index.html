@@ -9,19 +9,31 @@
   </head>
   <body>
     <header>
-      <img src="img/logo.png" alt="logo">
+      <img src="img/logo.png" alt="logo" class="logo">
     </header>
 
-    <nav>
-      <ul>
-        <a href="#"> <li class="filter filter-p"><img src="img/blue_p.png" alt=""></li></a>
-        <a href="#"> <li class="filter filter-t"><img src="img/blue_t.png" alt=""></li></a>
-        <a href="#"> <li class="filter filter-s"><img src="img/blue_s.png" alt=""></li></a>
-        <a href="#"> <li class="filter filter-blue">Blue</li></a>
-        <a href="#"> <li class="filter filter-yellow">Yellow</li></a>
-        <a href="#"> <li class="filter filter-pink">Pink</li></a>
-      </ul>
-    </nav>
+  
+      <section class="buttons">
+        <button class="filter filter-p" >
+          <img 
+          src="img/blue_p.png" alt="" class="imgBtn" data-key="type" data-value="tshirt">
+        </button>
+        <button class="filter filter-t" >
+          <img 
+          src="img/blue_t.png" alt="" class="imgBtn" data-key="type" data-value="pants">
+        </button>
+        <button class="filter filter-s" >
+          <img
+          src="img/blue_s.png" alt="" class="imgBtn" data-key="type" data-value="skirt">
+        </button>
+        <button class="filter filter-blue" data-key="color" data-value="blue">
+          Blue</button>
+        <button class="filter filter-yellow" data-key="color" data-value="yellow">
+          Yellow</button>
+        <button class="filter filter-pink" data-key="color" data-value="pink">
+          Pink</button>
+      </section>
+    
 
     <main>
       <ul class="product-ul">
