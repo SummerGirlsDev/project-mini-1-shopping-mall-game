@@ -1,14 +1,9 @@
 "use strict";
 
-const main = document.querySelector("main");
-const btns = document.getElementsByClassName("btn");
-const itemList = document.getElementById("item-list");
+const btns = document.querySelectorAll(".btn");
+const itemList = document.querySelector("#item-list");
 
-document.addEventListener("DOMContentLoaded", () => {
-  fetchData().then((items) => {
-    renderData(items);
-  });
-});
+fetchData().then((items) => renderData(items));
 
 for (const btn of btns) {
   btn.addEventListener("click", (event) => {
@@ -22,38 +17,32 @@ for (const btn of btns) {
   });
 }
 
-const fetchData = () => {
+function fetchData() {
   return fetch("data/item.json")
     .then((response) => response.json())
     .then((json) => json.items);
-};
+}
 
-const filterData = (event, items) => {
+function filterData(event, items) {
   let dataset = "";
   event.target.tagName === "IMG"
     ? (dataset = event.target.parentNode.dataset)
     : (dataset = event.target.dataset);
+
   let dataKey = dataset.key;
   let dataValue = dataset.value;
 
-  switch (dataKey) {
-    case "type":
-      items = items.filter((e) => e.type === dataValue);
-      break;
-    case "color":
-      items = items.filter((e) => e.color === dataValue);
-      break;
-  }
+  items = items.filter((e) => e[dataKey] === dataValue);
   return items;
-};
+}
 
-const renderData = (items) => {
+function renderData(items) {
   let html = ``;
   items.forEach((val) => {
     html += `<li>`;
-    html += `<img src = "${val.image}" alt="옷 이미지" />`;
+    html += `<img src = "${val.image}" alt="${val.type}" />`;
     html += `<p>${val.gender}, ${val.size} size</p>`;
     html += `</li>`;
   });
   itemList.innerHTML = html;
-};
+}

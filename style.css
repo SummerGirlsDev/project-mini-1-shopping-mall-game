@@ -60,11 +60,11 @@ main {
 }
 
 header {
-  padding-top: 70px;
+  padding-top: 50px;
 }
 
 nav {
-  height: 140px;
+  height: 110px;
 }
 
 nav ul {
@@ -109,6 +109,8 @@ nav .btn-color[data-value="pink"] {
 
 #item-list {
   width: 550px;
+  height: 55vh;
+  overflow: auto;
 }
 
 #item-list li {
