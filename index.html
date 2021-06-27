@@ -7,5 +7,49 @@
     <link rel="stylesheet" href="style.css" />
     <script src="src/main.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1 class="a11y-hidden">쇼핑몰 홈</h1>
+      <a href="#" onclick="window.location.reload()"
+        ><img src="./img/logo.png" alt="쇼핑몰 로고"
+      /></a>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="#" class="btn" data-key="type" data-value="tshirt"
+            ><img src="./img/blue_t.png" alt="상의"
+          /></a>
+        </li>
+        <li>
+          <a href="#" class="btn" data-key="type" data-value="pants"
+            ><img src="./img/blue_p.png" alt="바지"
+          /></a>
+        </li>
+        <li>
+          <a href="#" class="btn" data-key="type" data-value="skirt"
+            ><img src="./img/blue_s.png" alt="치마"
+          /></a>
+        </li>
+        <li>
+          <a href="#" class="btn btn-color" data-key="color" data-value="blue"
+            >Blue</a
+          >
+        </li>
+        <li>
+          <a href="#" class="btn btn-color" data-key="color" data-value="yellow"
+            >Yellow</a
+          >
+        </li>
+        <li>
+          <a href="#" class="btn btn-color" data-key="color" data-value="pink"
+            >Pink</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <ul id="item-list"></ul>
+    </main>
+  </body>
 </html>
